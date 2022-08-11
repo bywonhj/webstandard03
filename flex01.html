@@ -20,6 +20,22 @@
         .box3{ background:#008000;}
         .box4{ background:#f7c203;}
         .box5{ background:#ff0873;}
+
+        .container1{
+            display: flex;
+            flex-direction:row;  /* 메인축 설정 */
+            /* row , row-reverse , column column-reverse */
+            justify-content: space-around;  
+            /* flex-end ,flex-start , center , space-between , space-around */
+            align-items:  center;
+              /* flex-end ,flex-start , center , stretch */
+        }
+        .container1 >.box1 {align-self: flex-start;}
+
+        .container2 {display: flex; flex-wrap:wrap; flex-direction: column;}
+        
+        .container2>div{flex:0 0 100px;}
+
     </style>
 </head>
 <body>

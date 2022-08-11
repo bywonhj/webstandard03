@@ -10,6 +10,9 @@
             display: flex;width: 600px;height:40px;background-color:#666;
         }
         .wrap1>div{width: 100px;}
+        .wrap1>div:nth-child(1){background-color: red;flex-grow: 2;}
+        .wrap1>div:nth-child(2){background-color: green;flex-grow: 1;}
+        .wrap1>div:nth-child(3){background-color:blue;flex-grow: 1;}
 
         .wrap2{
             display: flex;width: 600px;height:40px;
@@ -17,9 +20,9 @@
             margin-top: 50px;
         }
         .wrap2>div{width: 300px;}
-        .wrap2>div:nth-child(1){background-color: red;}
-        .wrap2>div:nth-child(2){background-color: green;}
-        .wrap2>div:nth-child(3){background-color:blue;}
+        .wrap2>div:nth-child(1){background-color: red;flex-shrink: 2;}
+        .wrap2>div:nth-child(2){background-color: green;flex-shrink:1}
+        .wrap2>div:nth-child(3){background-color:blue;flex-shrink: 1}
 
         .wrap3{
             display: flex;width: 600px;height:40px;
@@ -27,9 +30,9 @@
             margin-top: 50px;
         }
         .wrap3>div{width: 400px;}
-        .wrap3>div:nth-child(1){background-color: red;}
-        .wrap3>div:nth-child(2){background-color: green;}
-        .wrap3>div:nth-child(3){background-color:blue;}
+        .wrap3>div:nth-child(1){background-color: red;flex-shrink: 3;} 
+        .wrap3>div:nth-child(2){background-color: green;flex-shrink: 1}
+        .wrap3>div:nth-child(3){background-color:blue;flex-shrink: 1}
 
         .wrap4{
             display: flex;width: 800px;height:40px;
@@ -37,9 +40,9 @@
             margin-top: 50px;
         }
         .wrap4>div{width: 300px;}
-        .wrap4>div:nth-child(1){background-color: red;}
-        .wrap4>div:nth-child(2){background-color: green;}
-        .wrap4>div:nth-child(3){background-color:blue;}
+        .wrap4>div:nth-child(1){background-color: red;flex-shrink: 2;}
+        .wrap4>div:nth-child(2){background-color: green;flex-shrink: 2;}
+        .wrap4>div:nth-child(3){background-color:blue;flex-shrink: 0}
 
         
         .wrap5{
@@ -58,19 +61,19 @@
 </head>
 <body>
     <div class="wrap1">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+        <div class="box"></div><!-- (600/4)*2 -->
+        <div class="box"></div><!-- (600/4)*1 -->
+        <div class="box"></div><!-- (600/4)*1 -->
     </div>
     <div class="wrap2">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+        <div class="box"></div><!-- 300-((300/4)*2) =150 -->
+        <div class="box"></div><!-- 300-((300/4) * 1 )= 225-->
+        <div class="box"></div><!-- 300-((300/4) * 1 )= 225-->
     </div>
     <div class="wrap3">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+        <div class="box"></div><!-- 400-360 --> 
+        <div class="box"></div><!-- 400-120 --> 
+        <div class="box"></div><!-- 400-120 -->
     </div>
     <div class="wrap4">
         <div class="box"></div>
