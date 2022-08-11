@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       
+       @import url(css/reset.css);
+       .tab_area{width: 80%;margin: 50px auto;}
+       .tab_title{height: 40px;}
+       .tab_list{float: left;width: 20%;height: 40px;text-align: center;line-height: 40px;}
+       .tab_list.tab_active {background-color: #eee;}
+       .tab_content_container{position: relative;}
+       .tab_content{width:100%;box-sizing: border-box; padding: 50px; background-color: #eee; position: absolute; left:0;top:0;display:none;}
+       .tab_content:first-child{display: block;}
     </style>
 </head>
 <body>
     <div class="tab_area">
         <div class='tab_title'>
             <ul class='tab_list_box'>
-                <li class='tab_list tab_active' data-tabnum='0'>타이틀1</li>
-                <li class='tab_list' data-tabnum='1'>타이틀2</li>
-                <li class='tab_list' data-tabnum='2'>타이틀3</li>
+                <li class='tab_list tab_active' data-num='0'>타이틀1</li>
+                <li class='tab_list' data-num='1'>타이틀2</li>
+                <li class='tab_list' data-num='2'>타이틀3</li>
             </ul>
         </div><!-- //tab_title -->
         <div class='tab_content_container'>
@@ -30,5 +37,34 @@
             </div>
         </div><!-- //tab_content_container -->
     </div>
+    <script>
+         const tabList = document.querySelectorAll('.tab_list');
+         tabList.forEach((list)=>{
+            list.addEventListener('click',(e)=>{
+                const tabContent= document.querySelectorAll('.tab_content');
+                let tabNum = e.currentTarget.getAttribute('data-num'); //dataset.num
+                console.log(tabNum)
+                // 전체 off 
+                tabContent.forEach((contentele,index)=>{
+                    contentele.style.display = 'none'; // 컨텐츠를 다 안보이게 한것
+                    tabList[index].className = 'tab_list' //탭리스트의 액티브 클래스를다 안보이게 한다. 
+                })
+                
+                //해당 요소만 on 
+                tabContent[tabNum].style.display = 'block' ;
+                if(list.className.indexOf('tab_active')==-1){
+                    list.className = 'tab_list tab_active'
+                }
+             })
+         })
+
+         /* 
+          forEach()
+          map() 
+          filter() 
+         */
+
+     
+    </script>
 </body>
 </html>
