@@ -7,7 +7,56 @@ background-color
 background-image:url(이미지경로)
 background-repeat:repeat(기) / no-repeat / repeat-x / repeat-y 
 background-attachment : fixed / scroll (기)
-background-position
-background-size 
+background-position : left center right top center bottom 좌표 
+background-size : px % cover contain 
+background: url(이미지경로)  no-repeat left center / cover 
+=============================================
  
+ 자식요소에 float 적용하면 부모요소의 높이가 없어진다. 
+ 1. 부모요소에 height 값을 명시 
+ 2. overflow:hidden 
+ 3. clearfix 클래스를 만들어서 사용 
  
+
+transform : rotate()  회전  단위 deg 
+               scale()  크기조절 
+               scaleX() 
+               scaleY() 
+               skew()  기울기  단위 deg 
+               skewX() 
+               skewY()
+               translate(x,y) 이동 
+               translateX()
+               translateY()
+ transition : 속성명 시간초  
+                all => 모든 속성에 트랜지션 다 적용  
+                
+                
+
+입력양식 
+<input />
+type=text
+type=password
+type=checkbox
+type=radio 
+type=reset
+type=submit
+type=button 
+type=email
+type=search 
+type=file 
+type=tel
+...............
+
+
+<select>
+<option>통신사</option>
+<option>sk</option>
+<option>kt</option>
+<option>lg</option>
+</select> 드랍다운메뉴 
+
+<textarea></textarea>
+
+
+
