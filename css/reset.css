@@ -13,3 +13,5 @@ a:hover {text-decoration:underline}
 iframe {overflow:hidden;margin:0;border:0;padding:0;vertical-align:top}
 mark {background-color:transparent}
 i {font-style:normal}
+.clearfix::after{content: '';display: block;clear: both}
+.cf::after{content: '';display: block;clear: both}
